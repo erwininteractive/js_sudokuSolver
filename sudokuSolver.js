@@ -82,7 +82,6 @@ class Sudoku
 
     return true;
   };
-
 }
 
 var s = new Sudoku(puzzle);

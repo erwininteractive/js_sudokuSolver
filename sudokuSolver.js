@@ -27,7 +27,10 @@ class Sudoku
 
   isPossible(y, x, n) 
   {
-    for (var i = 0; i < 9; i++) 
+    const y0 = (Math.floor(y / 3) * 3);
+    const x0 = (Math.floor(x / 3) * 3);
+
+    for (let i = 0; i < 9; i++) 
     {
       if (this.sudoku[y][i] == n)
         return false;
@@ -39,11 +42,9 @@ class Sudoku
         return false;
     }
 
-    var y0 = (Math.floor(y / 3) * 3);
-    var x0 = (Math.floor(x / 3) * 3);
-    for (var i = 0; i < 3; i++) 
+    for (let i = 0; i < 3; i++) 
     {
-      for (var j = 0; j < 3; j++) 
+      for (let j = 0; j < 3; j++) 
       {
         if (this.sudoku[y0 + i][x0 + j] == n)
           return false;
@@ -55,13 +56,13 @@ class Sudoku
 
   solve() 
   {
-    for (var y = 0; y < 9; y++) 
+    for (let y = 0; y < 9; y++) 
     {
-      for (var x = 0; x < 9; x++) 
+      for (let x = 0; x < 9; x++) 
       {
         if (this.sudoku[y][x] == 0) 
         {
-          for (var n = 1; n <= 9; n++) 
+          for (let n = 1; n <= 9; n++) 
           {
             if (this.isPossible(y, x, n)) 
             {

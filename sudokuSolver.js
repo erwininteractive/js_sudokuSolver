@@ -19,14 +19,12 @@ var puzzle = [
 
 class Sudoku 
 {
-    constructor(puzzle) 
-    {
+    constructor(puzzle) {
         this.sudoku = puzzle;
         this.solved = false;
     }
 
-    isPossible(y, x, n) 
-    {
+    isPossible(y, x, n) {
         const y0 = (Math.floor(y / 3) * 3);
         const x0 = (Math.floor(x / 3) * 3);
 
@@ -53,8 +51,7 @@ class Sudoku
         return true;
     };
 
-    solve() 
-    {
+    solve() {
         for (let y = 0; y < 9; y++) {
             for (let x = 0; x < 9; x++) {
                 if (this.sudoku[y][x] == 0) {
